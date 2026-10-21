@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Llamas </title>
+        <link rel="stylesheet" href="Llamas.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body>
+    <header>
+        <!-- Added an id so JavaScript can find this heading -->
+        <h1 id="mainHeading">No Drama Llama</h1>
+        <p>Llamas are large, domesticated South American camelids widely used for centuries as pack animals, livestock guardians, and wool producers.</p>
+       
+        </header>
+        <nav>
+    <li class="btn nav-link"></li><a href="#">Home</a>
+    <li class="btn nav-link"></li> <a href="#">Llamas</a>
+    <li class="btn nav-link"></li> <a href="#">Places</a>
+    <li class="btn nav-link"></li> <a href="#">Contact</a>
+    </nav>
+        <main>
+            <br>
+       <section id="left">
+     <div style="text-align: center;">
+        <p1>Email with your name for more Cute Llama pics</p1>
+     <form action="mailto:jasminea@missionreadyhq.com"method="post">
+        <br>
+        <label id="name">Name</label> <input type="name" name="name"> <br>
+        <label id="email">Email</label> <input type="email" name="email">
+        <br>  
+        <input type="Submit" value="Submit">
+    </form>
+
+    <a href="https://www.bing.com/images/search?q=Llamas%20with%20coats&qs=n&form=QBIR&sp=-1&lq=0&pq=llamas%20with%20coats&sc=1-17&cvid=370BF2FC75314E68B4A04C01FDF6E24C&first=1"><button class="btn click-btn">Click for Cuteness</button></a>
+    
+    <!-- Simple JavaScript activity for visitors -->
+
+<div style="text-align:center; margin-top:20px;">
+
+    <h3>Llama Popularity Vote</h3>
+
+    <button id="llamaButton">
+        Vote For Llamas
+    </button>
+
+    <p id="voteText">
+        Llama fans: 0
+    </p>
+
+</div>   
+
+<!-- Lets users cycle through the different llama types -->
+<h3>Meet Different Llamas</h3>
+
+<p id="currentLlama">
+    Suri Llama
+</p>
+
+<button id="nextLlama">
+    Next Llama
+</button>
+
+<a id="llamaInfoLink" href="#suri">
+    <button>
+        Learn About This Llama
+    </button>
+</a>
+    
+    <h2>Various types of Llamas</h2>
+        <ul id="types">
+            <li class="Llama" id="suri">Suri Llama</li>
+            <div class="imgph">Recognized by their distinctive non-crimped fleece that hangs down in long, silky, twisting dreadlocks.</div>
+            <li class="Llama" id="pack">Pack Llama</li>
+            <div class="imgph">Pack llamas are draft animals trained to carry cargo across rough terrain, favored for their low environmental impact, surefootedness, and gentle demeanor.</div>
+            <li class="Llama" id="show">Show Llama</li>
+            <div class="imgph">Bred and groomed to meet strict aesthetic standards, conformation, and temperament for competition in livestock shows.</div>
+            <li class="Llama" id="guard">Guard Llama</li>
+            <div class="imgph">Naturally protective animals kept to watch over sheep, goats, or livestock and ward off predators like coyotes or stray dogs.</div>
+            <li class="Llama" id="huacaya">Huacaya Llama</li>
+            <div class="imgph">Characterized by dense, crimped, fleece that grows perpendicular to the skin, giving them a distinctly fluffy, teddy-bear appearance.</div>
+            <li class="Llama" id="fibre">Fibre Llama</li>
+            <div class="imgph">Bred specifically for high-quality fleece production, generating a soft, warm, and durable wool used for textiles.</div>
+        </ul>
+       </section>
+       <section id="right">
+        <img class="Llama1" src="Llama Images/Suri Llama-Photoroom.png" alt="Suri Llama"/>
+        <img class="Llama2" src="Llama Images/Pack Llama-Photoroom.png" alt="Pack Llama">
+        <img class="Llama3" src="Llama Images/Show Llama-Photoroom.png" alt="Show Llama">
+        <img class="Llama4" src="Llama Images/Guard Llama-Photoroom.png" alt="Guard Llama">
+        <img class="Llama5" src="Llama Images/Huacaya Llama-Photoroom.png" alt="Huacaya Llama">
+        <img class="Llama6" src="Llama Images/Fibre Llama-Photoroom.png" alt="Fibre Llama">
+
+       </section>
+      </main>
+ <footer>
+    <h3>Copyright 2026 by Jasmine Adams, All rights reserved</h3>
+</footer>
+<script>
+
+    // This number changes when people vote
+    let llamaFans = 0;
+
+    // This number stays the same
+    const targetVotes = 5;
+
+// Stores the llama types and links
+const llamaInfo = [
+    {
+        name: "Suri Llama",
+        link: "#suri"
+    },
+    {
+        name: "Pack Llama",
+        link: "#pack"
+    },
+    {
+        name: "Show Llama",
+        link: "#show"
+    },
+    {
+        name: "Guard Llama",
+        link: "#guard"
+    },
+    {
+        name: "Huacaya Llama",
+        link: "#huacaya"
+    },
+    {
+        name: "Fibre Llama",
+        link: "#fibre"
+    }
+];
+
+// Keeps track of the current llama
+let currentLlamaIndex = 0;
+
+// Shows the next llama in the list
+function showNextLlama() {
+
+    // Move to the next llama
+    currentLlamaIndex++;
+
+    // Start from the beginning when we reach the end
+    if (currentLlamaIndex >= llamaInfo.length) {
+        currentLlamaIndex = 0;
+    }
+     // Change the llama name shown on the page
+    document.getElementById("currentLlama").textContent =
+        llamaInfo[currentLlamaIndex].name;
+
+    // Update the link button
+    document.getElementById("llamaInfoLink").href =
+        llamaInfo[currentLlamaIndex].link;
+}
+    // Runs whenever the vote button is clicked
+    function countVotes() {
+
+        // Add 1 to the total votes
+        llamaFans = llamaFans + 1;
+
+        // Update the text on the page
+        document.getElementById("voteText").textContent =
+        "Llama fans: " + llamaFans;
+
+        // Check if we have reached 5 votes
+        if (llamaFans >= targetVotes) {
+
+            document.getElementById("voteText").textContent =
+            "Llama fans: " + llamaFans + " - Llamas are popular!";
+
+            // Change heading colour
+            document.getElementById("mainHeading").style.color =
+            "purple";
+        }
+    }
+  // Wait for the button to be clicked
+    document.getElementById("llamaButton")
+    .addEventListener("click", countVotes);
+
+    document.getElementById("nextLlama")
+    .addEventListener("click", showNextLlama);
+
+</script>
+</body>
+</html>
+

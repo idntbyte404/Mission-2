@@ -1,0 +1,153 @@
+header {
+    background-color: #7acf70;
+}
+
+h1 { display:flex;
+font-size:80px;
+justify-content: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    flex-wrap: wrap;
+
+}
+p1 {
+    font-style: italic;
+}
+
+
+main{
+    display: flex;
+}
+
+#left {
+    flex:80%;
+    background-color: #f1f1f1;
+    padding: 50px;
+}
+
+
+.click-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  background-color: #65b383;
+  color: white;
+  margin: 20px auto;
+  text-decoration: none;
+  padding: 14px 30px;
+  width: 200px;
+  font-weight: 700;
+
+  animation-name: colour-changer;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes colour-changer {
+  0%   { background-color: #f08bd9; transform: scale(1); }
+  25%  { background-color: #ffcf5f; transform: scale(1.05); }
+  50%  { background-color: #c493bb; transform: scale(1); }
+  75%  { background-color: #118ab2; transform: scale(1.05); }
+  100% { background-color: #f08bd9; transform: scale(1); }
+}
+.click-btn:hover a {
+    color: #fff;
+    cursor: pointer;
+    transform: scale(0.95);
+    text-decoration: none;
+}
+a:active {
+    color:rgb(93, 6, 6);
+    
+}
+a {
+  text-decoration: none;
+}
+
+
+nav{
+    display: flex;
+    justify-content: center;
+   justify-content: space-evenly;
+    background-color: #892b2b;
+    list-style-type: none;
+}
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.Llama {
+    display: flex;
+    background-color:#25821b;
+    justify-content: center;
+    font-size: larger;
+    list-style-type: none;
+}
+
+
+#right {
+    flex-basis: 10%;
+    background-color: white;
+    padding: 20px;
+
+}
+.Llama1 {
+    display: flex;
+    height: 180px;;
+    width: 180px;
+}
+.Llama2 {
+    display: flex;
+    height: 180px;;
+    width: 180px;
+}
+.Llama3 {
+    display: flex;
+    height: 180px;;
+    width: 180px;
+}
+.Llama4 {
+    display: flex;
+    height: 180px;;
+    width: 180px;
+}
+.Llama5 {
+    display: flex;
+    height: 180px;;
+    width: 180px;
+}
+.Llama6 {
+    display: flex;
+    height: 180px;;
+    width: 180px;
+}
+.main {
+    display: flex;
+    background-color: rgb(25, 168, 190);
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+ }
+
+ .imgph {
+    background-color: none;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+}
+
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #65db9c; 
+    color: rgb(0, 0, 0);
+}
